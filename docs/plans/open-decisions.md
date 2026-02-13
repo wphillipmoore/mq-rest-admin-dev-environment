@@ -34,8 +34,8 @@ Track decisions for the shared MQ test environment repository.
 
 - **Strategy**: Shared base owned by this repository (decided 2026-02-13, see
   `docs/plans/2026-02-13-repository-design.md`).
-- **Object naming prefix**: TBD (replacing `PYMQREST.*` with a repo-neutral
-  prefix).
+- **Object naming prefix**: `DEV.*` (decided 2026-02-13, replaced
+  `PYMQREST.*`).
 - **Repo-specific overlay mechanism**: Deferred until a consumer needs it.
 
 ## Consumption model
