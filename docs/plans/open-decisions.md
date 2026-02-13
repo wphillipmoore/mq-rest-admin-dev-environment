@@ -50,5 +50,5 @@ Track decisions for the shared MQ test environment repository.
 - **Workflow type**: Composite action at
   `.github/actions/setup-mq/action.yml` (decided 2026-02-13).
 - **Container image caching**: TBD.
-- **pymqrest migration**: TBD (update pymqrest to consume from this repo).
+- **pymqrest migration**: Done (PR wphillipmoore/pymqrest#214).
 - **mq-rest-admin integration**: TBD (add integration test support).
