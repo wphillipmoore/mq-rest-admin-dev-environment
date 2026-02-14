@@ -1,17 +1,15 @@
 networks:
   mq-dev-net:
-    name: mq-dev-net
 
 services:
   qm1:
     image: ${MQ_IMAGE:-icr.io/ibm-messaging/mq:latest}
-    container_name: mq-dev-qm1
     hostname: qm1
     networks:
       - mq-dev-net
     ports:
-      - "1414:1414"
-      - "9443:9443"
+      - "${QM1_MQ_PORT:-1414}:1414"
+      - "${QM1_REST_PORT:-9443}:9443"
     environment:
       LICENSE: accept
       MQ_QMGR_NAME: QM1
@@ -29,13 +27,12 @@ services:
 
   qm2:
     image: ${MQ_IMAGE:-icr.io/ibm-messaging/mq:latest}
-    container_name: mq-dev-qm2
     hostname: qm2
     networks:
       - mq-dev-net
     ports:
-      - "1415:1414"
-      - "9444:9443"
+      - "${QM2_MQ_PORT:-1415}:1414"
+      - "${QM2_REST_PORT:-9444}:9443"
     environment:
       LICENSE: accept
       MQ_QMGR_NAME: QM2
