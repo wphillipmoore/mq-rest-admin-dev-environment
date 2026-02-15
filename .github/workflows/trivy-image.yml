@@ -1,0 +1,24 @@
+name: Trivy Container Image Scan
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  security-events: write
+
+jobs:
+  trivy-image:
+    name: trivy-image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Scan MQ container image
+        uses: wphillipmoore/standard-actions/actions/security/trivy@develop
+        with:
+          scan-type: image
+          scan-ref: icr.io/ibm-messaging/mq:latest
+          exit-code: "0"
