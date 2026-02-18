@@ -45,7 +45,7 @@ repositories. Provides container lifecycle scripts, seed data, and
 a reusable GitHub Actions workflow for integration testing against
 a real MQ queue manager.
 
-**Project name**: mq-dev-environment
+**Project name**: mq-rest-admin-dev-environment
 
 **Status**: Pre-alpha (initial setup)
 
@@ -115,7 +115,7 @@ Consuming repositories depend on these stable details:
 ### Consumption Model
 
 - **Local development**: Consuming repos reference this repo as a
-  sibling directory (`../mq-dev-environment`) — same pattern as
+  sibling directory (`../mq-rest-admin-dev-environment`) — same pattern as
   `../standards-and-conventions`
 - **CI**: Reusable GitHub Actions workflow (or composite action) that
   starts the MQ containers, seeds them, and makes them available to
