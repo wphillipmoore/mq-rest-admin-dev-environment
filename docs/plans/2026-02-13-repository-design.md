@@ -67,7 +67,8 @@
 - Migrate Docker Compose file, mqwebuser.xml, lifecycle scripts, and MQSC
   seed files from pymqrest.
 - Rename `PYMQREST.*` object prefixes to a shared convention.
-- Update pymqrest to consume from `../mq-rest-admin-dev-environment` instead of bundling
+- Update pymqrest to consume from
+  `../mq-rest-admin-dev-environment` instead of bundling
   scripts directly.
 - Implement CI workflow/composite action for GitHub Actions integration.
 - Enable integration tests in pymqrest CI using the shared action.
