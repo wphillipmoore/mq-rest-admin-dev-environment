@@ -178,6 +178,39 @@ to force documentation indexing. When you encounter these directives:
 - `docs/standards-and-conventions.md` - Canonical standards reference
   (includes external repo)
 
+## Commit and PR Scripts
+
+**NEVER use raw `git commit`** — always use `scripts/dev/commit.sh`.
+**NEVER use raw `gh pr create`** — always use `scripts/dev/submit-pr.sh`.
+
+### Committing
+
+```bash
+scripts/dev/commit.sh --type feat --message "add new seed data" --agent claude
+scripts/dev/commit.sh --type fix --message "correct container startup" --agent claude
+```
+
+- `--type` (required): `feat|fix|docs|style|refactor|test|chore|ci|build`
+- `--message` (required): commit description
+- `--agent` (required): `claude` or `codex` — resolves the correct `Co-Authored-By` identity
+- `--scope` (optional): conventional commit scope
+- `--body` (optional): detailed commit body
+
+### Submitting PRs
+
+```bash
+scripts/dev/submit-pr.sh --issue 42 --summary "Add new seed data for testing"
+scripts/dev/submit-pr.sh --issue 42 --linkage Ref --summary "Update docs" --docs-only
+```
+
+- `--issue` (required): GitHub issue number (just the number)
+- `--summary` (required): one-line PR summary
+- `--linkage` (optional, default: `Fixes`): `Fixes|Closes|Resolves|Ref`
+- `--title` (optional): PR title (default: most recent commit subject)
+- `--notes` (optional): additional notes
+- `--docs-only` (optional): applies docs-only testing exception
+- `--dry-run` (optional): print generated PR without executing
+
 ## Key References
 
 **Canonical Standards**:
