@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   trivy-image:
-    name: trivy-image
+    name: "security: trivy-image"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
