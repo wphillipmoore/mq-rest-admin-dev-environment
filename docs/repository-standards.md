@@ -30,6 +30,7 @@
 - branching_model: library-release
 - release_model: none (consumed via git reference)
 - supported_release_lines: current only
+- primary_language: shell
 
 ## Local validation
 
