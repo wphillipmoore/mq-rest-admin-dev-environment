@@ -6,7 +6,7 @@
 
 - Add repository scaffolding and design decisions (#1)
 - Migrate Docker config and lifecycle scripts from pymqrest (#4)
-- Rename PYMQREST.* object prefix to DEV.* (#7)
+- Rename PYMQREST object prefix to DEV (#7)
 - Add setup-mq composite action for CI consumption (#9)
 - Parameterize docker-compose for per-project isolation (#12)
 - Add weekly Trivy container image scan
