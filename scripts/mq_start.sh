@@ -8,6 +8,9 @@ mq_admin_password="${MQ_ADMIN_PASSWORD:-mqadmin}"
 wait_timeout_seconds=120
 wait_interval_seconds=5
 
+qm1_rest_port="${QM1_REST_PORT:-9443}"
+qm2_rest_port="${QM2_REST_PORT:-9444}"
+
 wait_for_qm() {
   local rest_base_url="$1"
   local qmgr_name="$2"
@@ -39,5 +42,5 @@ wait_for_qm() {
   done
 }
 
-wait_for_qm "${MQ_REST_BASE_URL:-https://localhost:9443/ibmmq/rest/v2}" "QM1"
-wait_for_qm "${MQ_REST_BASE_URL_QM2:-https://localhost:9444/ibmmq/rest/v2}" "QM2"
+wait_for_qm "https://localhost:${qm1_rest_port}/ibmmq/rest/v2" "QM1"
+wait_for_qm "https://localhost:${qm2_rest_port}/ibmmq/rest/v2" "QM2"

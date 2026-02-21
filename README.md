@@ -1,4 +1,4 @@
-# mq-dev-environment
+# mq-rest-admin-dev-environment
 
 Shared dockerized IBM MQ test environment for use across multiple
 repositories. Provides container lifecycle scripts, seed data, and
@@ -124,7 +124,7 @@ jobs:
 
       - name: Setup MQ
         id: mq
-        uses: wphillipmoore/mq-dev-environment/.github/actions/setup-mq@main
+        uses: wphillipmoore/mq-rest-admin-dev-environment/.github/actions/setup-mq@main
         with:
           verify: 'true'  # default; set 'false' to skip verification
 
@@ -152,7 +152,7 @@ Consuming repositories reference this repo as a sibling directory:
 
 ```text
 ~/dev/
-  mq-dev-environment/     # this repo
+  mq-rest-admin-dev-environment/     # this repo
   pymqrest/               # consuming repo
   mq-rest-admin/          # consuming repo
 ```
@@ -160,8 +160,8 @@ Consuming repositories reference this repo as a sibling directory:
 From a consuming repo, start the environment with:
 
 ```bash
-../mq-dev-environment/scripts/mq_start.sh
-../mq-dev-environment/scripts/mq_seed.sh
+../mq-rest-admin-dev-environment/scripts/mq_start.sh
+../mq-rest-admin-dev-environment/scripts/mq_seed.sh
 ```
 
 ## Reset workflow

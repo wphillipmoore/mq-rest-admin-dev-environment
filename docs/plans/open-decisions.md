@@ -15,7 +15,7 @@ Track decisions for the shared MQ test environment repository.
 
 ## Repository identity
 
-- **Repository name**: `mq-dev-environment` (decided 2026-02-13, see
+- **Repository name**: `mq-rest-admin-dev-environment` (decided 2026-02-13, see
   `docs/plans/2026-02-13-repository-design.md`).
 - **License**: GPLv3.
 
@@ -40,7 +40,7 @@ Track decisions for the shared MQ test environment repository.
 
 ## Consumption model
 
-- **Local development**: Sibling directory `../mq-dev-environment` (decided
+- **Local development**: Sibling directory `../mq-rest-admin-dev-environment` (decided
   2026-02-13, see `docs/plans/2026-02-13-repository-design.md`).
 - **CI**: Composite action in this repo at
   `.github/actions/setup-mq/action.yml` (decided 2026-02-13).

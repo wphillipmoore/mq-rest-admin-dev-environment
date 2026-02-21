@@ -15,8 +15,8 @@
 - **Repository purpose**: Standalone shared repository for the dockerized IBM
   MQ test environment, consumed by multiple projects (pymqrest, mq-rest-admin,
   pymqpcf).
-- **Repository name**: `mq-dev-environment`.
-- **Consumption model (local)**: Sibling directory (`../mq-dev-environment`),
+- **Repository name**: `mq-rest-admin-dev-environment`.
+- **Consumption model (local)**: Sibling directory (`../mq-rest-admin-dev-environment`),
   same pattern as `../standards-and-conventions`.
 - **Consumption model (CI)**: Reusable GitHub Actions workflow or composite
   action (to be finalized during CI implementation).
@@ -67,7 +67,8 @@
 - Migrate Docker Compose file, mqwebuser.xml, lifecycle scripts, and MQSC
   seed files from pymqrest.
 - Rename `PYMQREST.*` object prefixes to a shared convention.
-- Update pymqrest to consume from `../mq-dev-environment` instead of bundling
+- Update pymqrest to consume from
+  `../mq-rest-admin-dev-environment` instead of bundling
   scripts directly.
 - Implement CI workflow/composite action for GitHub Actions integration.
 - Enable integration tests in pymqrest CI using the shared action.
@@ -111,7 +112,7 @@
 
 #### Evidence cited
 
-- The sibling directory pattern (`../mq-dev-environment`) is already
+- The sibling directory pattern (`../mq-rest-admin-dev-environment`) is already
   established in this ecosystem: `../standards-and-conventions` is consumed
   the same way by both pymqrest and mq-rest-admin.
 - Shell scripts are callable from any build system. Maven can invoke them via
@@ -166,7 +167,7 @@
 
 ### Consumption: git submodule
 
-- **Description**: Add `mq-dev-environment` as a git submodule in each
+- **Description**: Add `mq-rest-admin-dev-environment` as a git submodule in each
   consuming repo.
 - **Reason not chosen**: Submodules create friction (developers forgetting
   `--recurse-submodules`, detached HEAD confusion, extra steps in CI
@@ -188,7 +189,7 @@
 ### Consumption: Makefile include
 
 - **Description**: Provide a Makefile that consuming repos include via
-  `include ../mq-dev-environment/Makefile`.
+  `include ../mq-rest-admin-dev-environment/Makefile`.
 - **Reason not chosen**: Not all consuming repos use Make. mq-rest-admin
   uses Maven. Adding Make as a required tool for MQ lifecycle management
   is an unnecessary dependency. The shell scripts are directly callable

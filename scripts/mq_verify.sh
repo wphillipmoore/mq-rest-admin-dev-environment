@@ -3,8 +3,11 @@ set -euo pipefail
 
 mq_admin_user="${MQ_ADMIN_USER:-mqadmin}"
 mq_admin_password="${MQ_ADMIN_PASSWORD:-mqadmin}"
-qm1_rest_base_url="${MQ_REST_BASE_URL:-https://localhost:9443/ibmmq/rest/v2}"
-qm2_rest_base_url="${MQ_REST_BASE_URL_QM2:-https://localhost:9444/ibmmq/rest/v2}"
+
+qm1_rest_port="${QM1_REST_PORT:-9443}"
+qm2_rest_port="${QM2_REST_PORT:-9444}"
+qm1_rest_base_url="https://localhost:${qm1_rest_port}/ibmmq/rest/v2"
+qm2_rest_base_url="https://localhost:${qm2_rest_port}/ibmmq/rest/v2"
 
 echo "=== QM1: DEV.QLOCAL ==="
 curl -sS -k -u "${mq_admin_user}:${mq_admin_password}" \

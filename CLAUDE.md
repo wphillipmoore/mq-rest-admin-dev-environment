@@ -3,6 +3,34 @@
 This file provides guidance to Claude Code (claude.ai/code) when
 working with code in this repository.
 
+## Auto-memory policy
+
+**Do NOT use MEMORY.md.** Claude Code's auto-memory feature stores behavioral
+rules outside of version control, making them invisible to code review,
+inconsistent across repos, and unreliable across sessions. All behavioral rules,
+conventions, and workflow instructions belong in managed, version-controlled
+documentation (CLAUDE.md, AGENTS.md, skills, or docs/).
+
+If you identify a pattern, convention, or rule worth preserving:
+
+1. **Stop.** Do not write to MEMORY.md.
+2. **Discuss with the user** what you want to capture and why.
+3. **Together, decide** the correct managed location (CLAUDE.md, a skill file,
+   standards docs, or a new issue to track the gap).
+
+This policy exists because MEMORY.md is per-directory and per-machine — it
+creates divergent agent behavior across the multi-repo environment this project
+operates in. Consistency requires all guidance to live in shared, reviewable
+documentation.
+
+## Shell command policy
+
+**Do NOT use heredocs** (`<<EOF` / `<<'EOF'`) for multi-line arguments to CLI
+tools such as `gh`, `git commit`, or `curl`. Heredocs routinely fail due to
+shell escaping issues with apostrophes, backticks, and special characters.
+Always write multi-line content to a temporary file and pass it via `--body-file`
+or `--file` instead.
+
 ## Documentation Strategy
 
 This repository uses two complementary approaches for AI agent
@@ -45,7 +73,7 @@ repositories. Provides container lifecycle scripts, seed data, and
 a reusable GitHub Actions workflow for integration testing against
 a real MQ queue manager.
 
-**Project name**: mq-dev-environment
+**Project name**: mq-rest-admin-dev-environment
 
 **Status**: Pre-alpha (initial setup)
 
@@ -115,7 +143,7 @@ Consuming repositories depend on these stable details:
 ### Consumption Model
 
 - **Local development**: Consuming repos reference this repo as a
-  sibling directory (`../mq-dev-environment`) — same pattern as
+  sibling directory (`../mq-rest-admin-dev-environment`) — same pattern as
   `../standards-and-conventions`
 - **CI**: Reusable GitHub Actions workflow (or composite action) that
   starts the MQ containers, seeds them, and makes them available to
@@ -177,6 +205,39 @@ to force documentation indexing. When you encounter these directives:
   (included from AGENTS.md)
 - `docs/standards-and-conventions.md` - Canonical standards reference
   (includes external repo)
+
+## Commit and PR Scripts
+
+**NEVER use raw `git commit`** — always use `scripts/dev/commit.sh`.
+**NEVER use raw `gh pr create`** — always use `scripts/dev/submit-pr.sh`.
+
+### Committing
+
+```bash
+scripts/dev/commit.sh --type feat --message "add new seed data" --agent claude
+scripts/dev/commit.sh --type fix --message "correct container startup" --agent claude
+```
+
+- `--type` (required): `feat|fix|docs|style|refactor|test|chore|ci|build`
+- `--message` (required): commit description
+- `--agent` (required): `claude` or `codex` — resolves the correct `Co-Authored-By` identity
+- `--scope` (optional): conventional commit scope
+- `--body` (optional): detailed commit body
+
+### Submitting PRs
+
+```bash
+scripts/dev/submit-pr.sh --issue 42 --summary "Add new seed data for testing"
+scripts/dev/submit-pr.sh --issue 42 --linkage Ref --summary "Update docs" --docs-only
+```
+
+- `--issue` (required): GitHub issue number (just the number)
+- `--summary` (required): one-line PR summary
+- `--linkage` (optional, default: `Fixes`): `Fixes|Closes|Resolves|Ref`
+- `--title` (optional): PR title (default: most recent commit subject)
+- `--notes` (optional): additional notes
+- `--docs-only` (optional): applies docs-only testing exception
+- `--dry-run` (optional): print generated PR without executing
 
 ## Key References
 
