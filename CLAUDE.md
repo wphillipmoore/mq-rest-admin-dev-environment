@@ -89,6 +89,14 @@ a real MQ queue manager.
 
 ## Development Commands
 
+### Standard Tooling
+
+```bash
+cd ../standard-tooling && uv sync                                                # Install standard-tooling
+export PATH="../standard-tooling/.venv/bin:../standard-tooling/scripts/bin:$PATH" # Put tools on PATH
+git config core.hooksPath ../standard-tooling/scripts/lib/git-hooks               # Enable git hooks
+```
+
 ### Environment Setup
 
 - **Docker**: Docker Desktop or equivalent with Docker Compose v2
@@ -179,7 +187,7 @@ repository standards. Key highlights for quick reference:
 
 - Check current branch: `git status -sb`
 - If on `develop`, create `feature/*` branch or get explicit approval
-- Enable git hooks: `git config core.hooksPath scripts/git-hooks`
+- Enable git hooks: `git config core.hooksPath ../standard-tooling/scripts/lib/git-hooks`
 
 See `docs/repository-standards.md` for complete details.
 
@@ -208,14 +216,14 @@ to force documentation indexing. When you encounter these directives:
 
 ## Commit and PR Scripts
 
-**NEVER use raw `git commit`** — always use `scripts/dev/commit.sh`.
-**NEVER use raw `gh pr create`** — always use `scripts/dev/submit-pr.sh`.
+**NEVER use raw `git commit`** — always use `st-commit`.
+**NEVER use raw `gh pr create`** — always use `st-submit-pr`.
 
 ### Committing
 
 ```bash
-scripts/dev/commit.sh --type feat --message "add new seed data" --agent claude
-scripts/dev/commit.sh --type fix --message "correct container startup" --agent claude
+st-commit --type feat --message "add new seed data" --agent claude
+st-commit --type fix --message "correct container startup" --agent claude
 ```
 
 - `--type` (required): `feat|fix|docs|style|refactor|test|chore|ci|build`
@@ -227,8 +235,8 @@ scripts/dev/commit.sh --type fix --message "correct container startup" --agent c
 ### Submitting PRs
 
 ```bash
-scripts/dev/submit-pr.sh --issue 42 --summary "Add new seed data for testing"
-scripts/dev/submit-pr.sh --issue 42 --linkage Ref --summary "Update docs" --docs-only
+st-submit-pr --issue 42 --summary "Add new seed data for testing"
+st-submit-pr --issue 42 --linkage Ref --summary "Update docs" --docs-only
 ```
 
 - `--issue` (required): GitHub issue number (just the number)
