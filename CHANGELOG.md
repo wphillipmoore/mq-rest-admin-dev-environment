@@ -1,3 +1,14 @@
+## [develop-v1.1.2] - 2026-02-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version to 1.1.2
+- Add cliff-release-notes.toml and backfill release notes (#62)
+## [1.1.1] - 2026-02-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Prepare release 1.1.1
 ## [develop-v1.1.1] - 2026-02-27
 
 ### 🐛 Bug Fixes
