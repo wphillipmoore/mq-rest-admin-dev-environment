@@ -1,3 +1,15 @@
+## [develop-v1.2.0] - 2026-02-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version to 1.1.3
+- Add actionlint to lint.sh and CI (#66)
+- Bump version to 1.2.0 (#68)
+## [1.1.2] - 2026-02-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Prepare release 1.1.2
 ## [develop-v1.1.2] - 2026-02-27
 
 ### ⚙️ Miscellaneous Tasks
