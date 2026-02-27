@@ -54,19 +54,6 @@ To add a new object:
 
 ## Environment variables
 
-The Docker Compose configuration supports port overrides via
-environment variables:
-
-| Variable | Default | Description |
-| --- | --- | --- |
-| `MQ_IMAGE` | `icr.io/ibm-messaging/mq:latest` | Container image |
-| `QM1_MQ_PORT` | `1414` | Host port for QM1 MQ listener |
-| `QM1_REST_PORT` | `9443` | Host port for QM1 REST API |
-| `QM2_MQ_PORT` | `1415` | Host port for QM2 MQ listener |
-| `QM2_REST_PORT` | `9444` | Host port for QM2 REST API |
-
-Set these before running `mq_start.sh` to use non-default ports:
-
-```bash
-QM1_REST_PORT=19443 QM2_REST_PORT=19444 scripts/mq_start.sh
-```
+See the [Environment Variables](reference/environment-variables.md)
+reference for the complete list of Docker Compose, script, consumer,
+and test gate variables.

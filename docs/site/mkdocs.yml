@@ -61,6 +61,11 @@ nav:
   - Architecture:
       - Environment Contract: architecture/environment-contract.md
       - Cross-QM Routing: architecture/cross-qm-routing.md
+  - Setup:
+      - New Repository Onboarding: setup/new-repo.md
   - CI Integration: ci-integration.md
   - Lifecycle Scripts: lifecycle-scripts.md
+  - Reference:
+      - Port Allocation: reference/port-allocation.md
+      - Environment Variables: reference/environment-variables.md
   - Development: development.md
