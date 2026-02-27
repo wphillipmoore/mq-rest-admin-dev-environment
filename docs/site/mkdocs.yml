@@ -1,0 +1,75 @@
+site_name: mq-rest-admin-dev-environment
+site_url: https://wphillipmoore.github.io/mq-rest-admin-dev-environment/
+site_description: Shared dockerized IBM MQ test environment for integration testing across the mq-rest-admin project family
+repo_url: https://github.com/wphillipmoore/mq-rest-admin-dev-environment
+repo_name: mq-rest-admin-dev-environment
+edit_uri: ""
+
+strict: true
+
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+extra:
+  version:
+    provider: mike
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Releases:
+      - Changelog: changelog.md
+      - Release Notes:
+          - releases/index.md
+  - Getting Started: getting-started.md
+  - Configuration:
+      - Docker Compose: configuration/docker-compose.md
+      - Seed Data: configuration/seed-data.md
+      - REST API Users: configuration/rest-api-users.md
+  - Architecture:
+      - Environment Contract: architecture/environment-contract.md
+      - Cross-QM Routing: architecture/cross-qm-routing.md
+  - Setup:
+      - New Repository Onboarding: setup/new-repo.md
+  - CI Integration: ci-integration.md
+  - Lifecycle Scripts: lifecycle-scripts.md
+  - Reference:
+      - Port Allocation: reference/port-allocation.md
+      - Environment Variables: reference/environment-variables.md
+  - Development: development.md

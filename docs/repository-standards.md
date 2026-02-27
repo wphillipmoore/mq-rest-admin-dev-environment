@@ -26,9 +26,9 @@
 ## Repository profile
 
 - repository_type: infrastructure
-- versioning_scheme: none (not published as a package)
+- versioning_scheme: semver
 - branching_model: library-release
-- release_model: none (consumed via git reference)
+- release_model: tagged-release
 - supported_release_lines: current only
 - primary_language: shell
 
@@ -67,7 +67,7 @@ submission. Do not construct commit messages or PR bodies manually.
 ### Committing
 
 ```bash
-scripts/dev/commit.sh \
+st-commit \
   --type TYPE --message MESSAGE --agent AGENT \
   [--scope SCOPE] [--body BODY]
 ```
@@ -86,7 +86,7 @@ the result.
 ### Submitting PRs
 
 ```bash
-scripts/dev/submit-pr.sh \
+st-submit-pr \
   --issue NUMBER --summary TEXT \
   [--linkage KEYWORD] [--title TEXT] \
   [--notes TEXT] [--docs-only] [--dry-run]

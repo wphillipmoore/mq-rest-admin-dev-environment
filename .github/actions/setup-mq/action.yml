@@ -16,6 +16,14 @@ inputs:
     description: Host port for QM2 REST API
     required: false
     default: '9444'
+  qm1-mq-port:
+    description: Host port for QM1 MQ listener
+    required: false
+    default: '1414'
+  qm2-mq-port:
+    description: Host port for QM2 MQ listener
+    required: false
+    default: '1415'
   verify:
     description: Run mq_verify.sh after seeding
     required: false
@@ -39,6 +47,8 @@ runs:
         COMPOSE_PROJECT_NAME: ${{ inputs.project-name }}
         QM1_REST_PORT: ${{ inputs.qm1-rest-port }}
         QM2_REST_PORT: ${{ inputs.qm2-rest-port }}
+        QM1_MQ_PORT: ${{ inputs.qm1-mq-port }}
+        QM2_MQ_PORT: ${{ inputs.qm2-mq-port }}
       run: scripts/mq_start.sh
 
     - name: Seed MQ objects
