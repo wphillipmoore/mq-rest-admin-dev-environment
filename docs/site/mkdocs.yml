@@ -53,6 +53,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Releases:
+      - Changelog: changelog.md
+      - Release Notes:
+          - releases/index.md
   - Getting Started: getting-started.md
   - Configuration:
       - Docker Compose: configuration/docker-compose.md
