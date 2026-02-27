@@ -8,3 +8,9 @@ if [ -n "$files" ]; then
 else
   echo "No shell scripts found."
 fi
+
+if command -v actionlint >/dev/null 2>&1; then
+  actionlint
+else
+  echo "actionlint not found — skipping workflow lint."
+fi
