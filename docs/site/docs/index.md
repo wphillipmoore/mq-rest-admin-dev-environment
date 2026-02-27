@@ -32,6 +32,8 @@ mq-rest-admin project:
 
 - [Getting Started](getting-started.md) — prerequisites and quick
   start
+- [New Repository Onboarding](setup/new-repo.md) — add a new
+  language library to the project
 - [Environment Contract](architecture/environment-contract.md) —
   stable ports, credentials, and URLs
 - [CI Integration](ci-integration.md) — composite action usage
