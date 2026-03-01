@@ -42,5 +42,21 @@ wait_for_qm() {
   done
 }
 
+set_stable_ltpa_cookie_name() {
+  local service_name="$1"
+  echo "Setting stable LTPA cookie name on ${service_name}..."
+  docker compose -f config/docker-compose.yml exec -T "${service_name}" \
+    setmqweb properties -k ltpaCookieName -v LtpaToken2
+  docker compose -f config/docker-compose.yml exec -T "${service_name}" endmqweb
+  docker compose -f config/docker-compose.yml exec -T "${service_name}" strmqweb
+}
+
+wait_for_qm "https://localhost:${qm1_rest_port}/ibmmq/rest/v2" "QM1"
+wait_for_qm "https://localhost:${qm2_rest_port}/ibmmq/rest/v2" "QM2"
+
+set_stable_ltpa_cookie_name "qm1"
+set_stable_ltpa_cookie_name "qm2"
+
+# Wait for web servers to restart after cookie name change.
 wait_for_qm "https://localhost:${qm1_rest_port}/ibmmq/rest/v2" "QM1"
 wait_for_qm "https://localhost:${qm2_rest_port}/ibmmq/rest/v2" "QM2"
