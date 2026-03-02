@@ -1,4 +1,6 @@
 <server>
+  <webAppSecurity ltpaCookieName="LtpaToken2" />
+
   <basicRegistry id="basic" realm="defaultRealm">
     <user name="mqadmin" password="${env.MQ_ADMIN_PASSWORD}" />
     <user name="mqreader" password="${env.MQ_READER_PASSWORD}" />
