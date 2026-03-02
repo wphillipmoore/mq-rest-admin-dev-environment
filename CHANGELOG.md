@@ -1,3 +1,17 @@
+## [develop-v1.2.1] - 2026-03-02
+
+### 🐛 Bug Fixes
+
+- Set stable LTPA cookie name in MQ container setup (#74)
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version to 1.2.1
+## [1.2.0] - 2026-02-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Prepare release 1.2.0
 ## [develop-v1.2.0] - 2026-02-27
 
 ### ⚙️ Miscellaneous Tasks
