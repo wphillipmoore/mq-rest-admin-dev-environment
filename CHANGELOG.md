@@ -1,3 +1,33 @@
+## [develop-v1.2.2] - 2026-03-02
+
+### ⚙️ Miscellaneous Tasks
+
+- Merge main into release/1.2.2
+## [1.2.1] - 2026-03-02
+
+### 🐛 Bug Fixes
+
+- Set LTPA cookie name declaratively in mqwebuser.xml (#80)
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version to 1.2.2 (#77)
+- Update standard-actions refs from @develop to @v1.1 (#78)
+- Prepare release 1.2.1
+## [develop-v1.2.1] - 2026-03-01
+
+### 🐛 Bug Fixes
+
+- Set stable LTPA cookie name in MQ container setup (#74)
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version to 1.2.1
+## [1.2.0] - 2026-02-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Prepare release 1.2.0
 ## [develop-v1.2.0] - 2026-02-27
 
 ### ⚙️ Miscellaneous Tasks
