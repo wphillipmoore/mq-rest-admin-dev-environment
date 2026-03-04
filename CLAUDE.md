@@ -117,7 +117,7 @@ scripts/mq_stop.sh           # Stop and remove containers
 
 ```bash
 scripts/mq_verify.sh         # Verify MQ environment is correctly seeded
-markdownlint '**/*.md' --ignore node_modules   # Lint documentation
+markdownlint . --ignore node_modules            # Lint documentation
 ```
 
 ## Architecture
