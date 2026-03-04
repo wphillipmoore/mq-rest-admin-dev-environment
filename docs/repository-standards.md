@@ -39,7 +39,7 @@
 scripts/mq_verify.sh
 
 # Lint documentation
-markdownlint '**/*.md' --ignore node_modules
+markdownlint . --ignore node_modules
 ```
 
 ## Tooling requirement
