@@ -228,7 +228,8 @@ st-commit --type fix --message "correct container startup" --agent claude
 
 - `--type` (required): `feat|fix|docs|style|refactor|test|chore|ci|build`
 - `--message` (required): commit description
-- `--agent` (required): `claude` or `codex` — resolves the correct `Co-Authored-By` identity
+- `--agent` (required): `claude` or `codex` — resolves the correct
+  `Co-Authored-By` identity
 - `--scope` (optional): conventional commit scope
 - `--body` (optional): detailed commit body
 
