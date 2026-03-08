@@ -6,6 +6,14 @@ working with code in this repository.
 <!-- include: docs/standards-and-conventions.md -->
 <!-- include: docs/repository-standards.md -->
 
+## Auto-memory policy
+
+**Do NOT use MEMORY.md.** Never write to MEMORY.md or any file under the
+memory directory. All behavioral rules, conventions, and workflow instructions
+belong in managed, version-controlled documentation (CLAUDE.md, AGENTS.md,
+skills, or docs/). If you want to persist something, tell the human what you
+would save and let them decide where it belongs.
+
 ## Project Overview
 
 Shared dockerized IBM MQ test environment for use across multiple
