@@ -28,7 +28,7 @@
   multiple consumers share the same objects.
 - **Environment contract**: Stable, documented properties (queue manager
   names, ports, credentials, REST base URLs) that consuming repos depend on.
-- **License**: GPLv3 (consistent with pymqrest and mq-rest-admin).
+- **License**: MIT (consistent with pymqrest and mq-rest-admin).
 
 ### Implicitly converged decisions
 
