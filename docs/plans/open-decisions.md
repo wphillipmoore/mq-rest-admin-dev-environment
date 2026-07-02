@@ -17,7 +17,7 @@ Track decisions for the shared MQ test environment repository.
 
 - **Repository name**: `mq-rest-admin-dev-environment` (decided 2026-02-13, see
   `docs/plans/2026-02-13-repository-design.md`).
-- **License**: GPLv3.
+- **License**: MIT.
 
 ## Environment contract
 
